@@ -1,0 +1,9 @@
+body {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+body.modal-open {
+  overflow: hidden;
+}

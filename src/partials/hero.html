@@ -1,0 +1,32 @@
+<section class="hero" id="hero">
+  <div class="hero-container container">
+    <h1 class="hero-title">ANEMONE</h1>
+    <h2 class="hero-badge">flower studio</h2>
+    <button class="hero-btn js-open-modal" type="button" data-modal="1">
+      <svg class="hero-icon">
+        <use
+          class="hero-icon-circle"
+          href="./img/svg_sprite.svg#icon-logo-sircle"
+        ></use>
+        <use
+          class="hero-icon-arrow"
+          href="./img/svg_sprite.svg#icon-logo-arrow"
+        ></use>
+      </svg>
+    </button>
+  </div>
+  <picture class="hero-shape">
+    <source
+      srcset="
+        ./img/desktop/hero/hero_l@1x.jpg 1x,
+        ./img/desktop/hero/hero_l@2x.jpg 2x
+      "
+      type="image/jpg"
+    />
+    <img
+      class="hero-img"
+      src="./img/desktop/hero/hero_l@1x.jpg"
+      alt="Flower studio preview"
+    />
+  </picture>
+</section>

@@ -1,0 +1,393 @@
+.overlay {
+  /* Скрываем подложку  */
+  opacity: 0;
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: 0.3s all;
+}
+
+/* Стили для модальных окон */
+
+.modal {
+  /* Скрываем окна  */
+  opacity: 0;
+  visibility: hidden;
+
+  /*  Установаем ширину окна  */
+  width: 100%;
+  max-width: 272px;
+
+  /*  Центрируем и задаем z-index */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30; /* Должен быть выше чем у подложки*/
+
+  /*  Побочные стили   */
+
+  background-color: var(--secondary-color);
+  transition: transform var(--transition-dur-and-func);
+}
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стили для кнопки закрытия */
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-close-btn {
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.modal-close-btn-icon {
+  stroke: var(--primary-color);
+}
+
+/* Стили для кнопок. Мы ведь порядочные разработчики, негоже простые ссылки оставлять */
+/**
+  |=================================================================================
+  | стилі для модалки store
+  |=================================================================================
+*/
+.modal-store {
+  padding: 28px 16px;
+}
+.modal-heading {
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+}
+.modal-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(15 / 12);
+  color: var(--modal-text-color);
+  margin-bottom: 18px;
+}
+.modal-form-input-desc {
+  display: block;
+  margin-bottom: 8px;
+
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--modal-text-color);
+}
+
+.modal-form-input {
+  display: block;
+  padding: 10px 12px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  height: 35px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+}
+
+.modal-form-field {
+  display: block;
+}
+.modal-form-field + .modal-form-field {
+  margin-top: 14px;
+}
+
+.modal-form-input::placeholder {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(15 / 12);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-form-send {
+  margin-top: 24px;
+  width: 240px;
+  height: 37px;
+
+  background: var(--accent-color);
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+/* Tablet and desktop styles */
+@media screen and (min-width: 768px) {
+  .modal-store {
+    max-width: 480px;
+    padding: 48px 32px;
+  }
+  .modal-heading {
+    font-size: 32px;
+    line-height: calc(39 / 32);
+    margin-bottom: 24px;
+  }
+
+  .modal-text {
+    font-size: 16px;
+    line-height: calc(20 / 16);
+    margin-bottom: 32px;
+  }
+
+  .modal-form-input-desc {
+    font-size: 14px;
+    line-height: calc(17 / 14);
+  }
+
+  .modal-form-input {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 49px;
+  }
+
+  .modal-form-field + .modal-form-field {
+    margin-top: 24px;
+  }
+
+  .modal-form-input::placeholder {
+    font-size: 14px;
+    line-height: calc(17 / 14);
+  }
+
+  .modal-form-send {
+    margin-top: 38px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
+}
+.modal-form-send:disabled {
+  background-color: rgba(232, 111, 84, 0.4);
+  cursor: not-allowed;
+}
+.modal-form-input:hover,
+.modal-form-input:focus {
+  outline: none;
+  border-color: rgba(17, 17, 17, 0.7);
+}
+
+.modal-form-input:not(:placeholder-shown):required:valid {
+  /* background: #fff url(../ok.png) no-repeat right; */
+  background: #fff url(/img/desktop/modal/ok.png) no-repeat right;
+  border-color: rgba(60, 188, 129, 1);
+  box-shadow: 0 0 3px #5cd053;
+  background-position: 98% center;
+}
+
+.modal-form-input:not(:placeholder-shown):required:invalid {
+  border-color: rgba(231, 74, 59, 1);
+  box-shadow: 0 0 3px #d45252;
+  /* background: #fff url(../error.png)no-repeat right; */
+  background: #fff url(/img/desktop/modal/error.png) no-repeat right;
+  background-position: 98% center;
+}
+
+/**
+    |==================================================================================
+    | стилі для модалки blog
+    |==================================================================================
+  */
+
+.modal-blog {
+  min-height: 380px;
+}
+
+.img-wrap {
+  width: 272px;
+  height: 121px;
+  background-repeat: no-repeat;
+  background-image: url(/img/mobile/modal/img_modal_mob@1x.jpg);
+  background-repeat: no-repeat;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .img-wrap {
+    background-image: url(/img/mobile/modal/img_modal_mob@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img-wrap {
+    width: 588px;
+    height: 271px;
+    background-image: url(/img/tablet/modal/img_modal_tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .img-wrap {
+      background-image: url(/img/tablet/modal/img_modal_tab@2x.jpg);
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .img-wrap {
+    width: 428px;
+    height: 528px;
+    background-image: url(/img/desktop/modal/img_modal@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .img-wrap {
+      background-image: url(/img/desktop/modal/img_modal@2x.jpg);
+    }
+  }
+}
+
+.modal-desc-wrap {
+  padding: 18px 16px 28px 16px;
+}
+
+.blog-modal-heading {
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: calc(23 / 19);
+  text-align: center;
+}
+
+.blog-modal-text {
+  margin-bottom: 18px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  text-align: center;
+  color: var(--modal-text-color);
+}
+
+.modal-form-send.blog-btn {
+  margin-top: 18px;
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) {
+  .modal-blog {
+    max-width: 588px;
+  }
+
+  .modal-desc-wrap {
+    padding: 28px 118px 40px;
+  }
+
+  .blog-modal-heading {
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: calc(34 / 28);
+    white-space: nowrap;
+  }
+
+  .blog-modal-text {
+    width: 336px;
+
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: calc(21 / 16);
+  }
+  .modal-form-send.blog-btn {
+    margin-top: 28px;
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1280px) {
+  .modal-blog {
+    display: flex;
+    max-width: 860px;
+    max-height: 588px;
+  }
+  .modal-desc-wrap {
+    padding: 111px 40px 112px;
+  }
+}
+
+/**
+    |==================================================================================
+    | стилі для модалки trd
+    |==================================================================================
+  */
+.modal-trd {
+  padding: 44px 16px 32px 16px;
+}
+@media screen and (min-width: 768px) {
+  .modal-trd {
+    max-width: 480px;
+    padding: 56px 54px 56px 54px;
+  }
+}
+
+.modal-trd-img {
+  width: 188px;
+  height: 142px;
+  margin-bottom: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.modal-title {
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.modal-txt {
+  margin-top: 14px;
+  text-align: center;
+}
+.modal-ctn-btn {
+  margin-top: 18px;
+}
+@media screen and (min-width: 768px) {
+  .modal-txt {
+    margin-top: 16px;
+  }
+  .modal-ctn-btn {
+    margin-top: 34px;
+  }
+  .modal-trd-img {
+    width: 266px;
+    height: 202px;
+  }
+}

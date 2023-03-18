@@ -1,0 +1,155 @@
+.blog-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.blog-line::after {
+  content: '';
+  display: block;
+  width: 100%;
+  border: 1px solid #000000;
+}
+.slick {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 38px;
+}
+@media screen and (min-width: 768px) {
+  .slick {
+    margin-bottom: 87px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .slick {
+    margin-bottom: 103px;
+  }
+}
+
+.slick-container {
+  padding: 0;
+}
+
+.slick__item {
+  display: block;
+  margin-right: 16px;
+}
+@media screen and(min-width: 768px) {
+  .slick__item {
+    margin-right: 16px;
+  }
+}
+
+.slick__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .slick__box {
+    overflow-x: hidden;
+  }
+  .slick-container {
+    max-width: 718px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .slick__box {
+    overflow-x: hidden;
+  }
+  .slick-container {
+    max-width: 1200px;
+  }
+}
+
+.my-slick-prev,
+.my-slick-next {
+  position: absolute;
+  font-size: 150%;
+  bottom: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  padding: 0;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+.my-slick-prev {
+  left: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .my-slick-prev {
+    font-size: 200%;
+    left: 300px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .my-slick-prev {
+    left: 545px;
+  }
+}
+
+.my-slick-next {
+  right: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .my-slick-next {
+    font-size: 200%;
+    right: 300px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .my-slick-next {
+    right: 545px;
+  }
+}
+
+.subscribe-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-box-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+}
+@media screen and (min-width: 768px) {
+  .subscribe-box-title {
+    font-size: 32px;
+    line-height: calc(39 / 32);
+  }
+}
+
+.subscribe-btn {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: calc(24 / 18);
+  color: #ffffff;
+  padding: 8px 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .subscribe-btn {
+    font-size: 28px;
+    line-height: calc(28 / 24);
+    margin-top: 32px;
+    padding: 20px 70px;
+  }
+}

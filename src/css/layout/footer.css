@@ -1,0 +1,145 @@
+.footer-container {
+  background-color: var(--primary-color);
+  padding: 32px 16px;
+  display: block;
+
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    padding: 60px 40px 54px 26px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-container {
+    padding: 72px 48px 72px 24px;
+  }
+}
+
+.footer-logo-icon {
+  fill: white;
+}
+
+@media screen and (max-width: 1280px) {
+  .footer-logo {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+.social-media-icon {
+  stroke: white;
+}
+
+.navi-title,
+.work-hours-title,
+.address-title {
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.21;
+  margin-bottom: 18px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-content {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 44px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-content {
+    gap: 96px;
+  }
+
+  .footer-address {
+    margin-right: 208px;
+  }
+}
+
+.footer-address {
+  width: 128px;
+  font-style: normal;
+}
+
+.navi-item,
+.work-hours-text,
+.adress-item {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  font-family: 'Inter', sans-serif;
+}
+
+.navi-item,
+.work-hours-text,
+.adress-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+  
+
+.social-media-list {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-item {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-item {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .footer-logo {
+    margin-right: 210px;
+  }
+}
+
+.navi {
+  margin-bottom: 32px;
+  display: block;
+  width: 116px;
+}
+
+.work-hours {
+  min-width: 128px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-email {
+    word-wrap: break-word;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .email-style {
+    word-break: break-all;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .email-style {
+    word-break: normal;
+  }
+}
